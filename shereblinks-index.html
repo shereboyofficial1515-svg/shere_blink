@@ -1,0 +1,2419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO META TAGS ===== -->
+  <title>Shereblinks | Custom Creations Made With Love & Creativity</title>
+  <meta name="description"
+    content="Shereblinks specializes in customized frames, bags, shirts, mugs, gift items, souvenirs and corporate branding. Custom creations made with love & creativity in Sapele, Delta State, Nigeria.">
+  <meta name="keywords"
+    content="Shereblinks, customized gifts, custom frames, custom bags, custom shirts, branding, Sapele, Delta State, Nigeria">
+  <meta name="author" content="Shereblinks">
+  <meta property="og:title" content="Shereblinks | Custom Creations Made With Love & Creativity">
+  <meta property="og:description"
+    content="Customized frames, bags, shirts, mugs, gifts, souvenirs & corporate branding.">
+  <meta property="og:type" content="website">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+
+  <style>
+    /* ==========================================================================
+   SHEREBLINKS — DESIGN SYSTEM
+   Palette: Pink #D63384 · Gold #D4AF37 · White #FFFFFF · Black #111111
+   Fonts: Georgia (display/serif) + system-ui (body) — no external fonts
+   ========================================================================== */
+
+    :root {
+      --pink: #D63384;
+      --pink-dark: #a8256a;
+      --pink-light: #fdeaf3;
+      --pink-soft: #f7d7e6;
+      --gold: #D4AF37;
+      --gold-light: #f0d78c;
+      --black: #111111;
+      --white: #ffffff;
+      --muted: #6b6070;
+      --radius-lg: 26px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+      --shadow-md: 0 14px 34px -14px rgba(17, 17, 17, .2);
+      --shadow-lg: 0 30px 70px -20px rgba(17, 17, 17, .28);
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --text: #111111;
+      --border: #f0dee9;
+    }
+
+    [data-theme="dark"] {
+      --bg: #160c14;
+      --surface: #20141c;
+      --text: #f7ecf2;
+      --border: #3a2130;
+      --muted: #c9b9c3;
+      --pink-light: #2a1520;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.65;
+      transition: background .4s ease, color .4s ease;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin-inline: auto;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: .001ms !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--pink);
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 26px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-head {
+      max-width: 640px;
+      margin-bottom: 50px;
+    }
+
+    .section-head.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-top: 12px;
+      line-height: 1.2;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin-top: 14px;
+      font-size: 1.02rem;
+    }
+
+    /* Section divider */
+    .divider {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .divider span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .divider .line {
+      width: 70px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--pink), transparent);
+    }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 32px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .3px;
+      transition: transform .4s var(--ease), box-shadow .4s var(--ease), background .3s, color .3s;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold) 60%, #a9861f);
+      color: var(--black);
+      box-shadow: 0 14px 30px -10px rgba(212, 175, 55, .55);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px -12px rgba(212, 175, 55, .7);
+    }
+
+    .btn-outline {
+      border: 1.5px solid rgba(255, 255, 255, .6);
+      color: #fff;
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(6px);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, .2);
+      transform: translateY(-3px);
+    }
+
+    .btn-pink {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 14px 30px -10px rgba(214, 51, 132, .5);
+    }
+
+    .btn-pink:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px -12px rgba(214, 51, 132, .65);
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    /* ---------- Loading screen ---------- */
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      transition: opacity .7s var(--ease), visibility .7s var(--ease);
+    }
+
+    #loader.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-mark {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      animation: markPulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes markPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    .loader-text {
+      color: rgba(255, 255, 255, .6);
+      font-size: .7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    /* ---------- Navbar ---------- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      padding: 20px 0;
+      transition: .5s var(--ease);
+    }
+
+    header.scrolled {
+      padding: 12px 0;
+      background: rgba(255, 255, 255, .85);
+      backdrop-filter: blur(16px) saturate(160%);
+      box-shadow: var(--shadow-md);
+    }
+
+    [data-theme="dark"] header.scrolled {
+      background: rgba(22, 12, 20, .85);
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      font-family: Georgia, serif;
+      box-shadow: var(--shadow-md);
+    }
+
+    .brand-name {
+      font-family: Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+
+    header.scrolled .brand-name {
+      color: var(--text);
+    }
+
+    .brand-name span {
+      display: block;
+      font-size: .58rem;
+      letter-spacing: 3px;
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 3px;
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: .9rem;
+      font-weight: 600;
+      color: #fff;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    header.scrolled nav a {
+      color: var(--text);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: width .4s var(--ease);
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .theme-toggle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .15);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: .3s;
+    }
+
+    header.scrolled .theme-toggle {
+      background: var(--pink-light);
+      color: var(--pink);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 28px;
+      z-index: 60;
+    }
+
+    .hamburger span {
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: .4s var(--ease);
+    }
+
+    header.scrolled .hamburger span {
+      background: var(--text);
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, rgba(17, 17, 17, .6), rgba(214, 51, 132, .55)),
+        url('https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+    }
+
+    .hero-content {
+      color: #fff;
+      max-width: 720px;
+      padding-top: 60px;
+    }
+
+    .hero-content .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .hero-content .eyebrow::before {
+      background: var(--gold-light);
+    }
+
+    .hero-content h1 {
+      color: #fff;
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      line-height: 1.1;
+      margin: 20px 0 20px;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: rise 1s var(--ease) .3s forwards;
+    }
+
+    .hero-content h1 em {
+      color: var(--gold-light);
+      font-style: normal;
+    }
+
+    .hero-content p.sub {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, .88);
+      max-width: 520px;
+      margin-bottom: 36px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: rise 1s var(--ease) .55s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: rise 1s var(--ease) .8s forwards;
+    }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 34px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, .75);
+    }
+
+    .scroll-indicator span {
+      font-size: .65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .scroll-mouse {
+      width: 22px;
+      height: 36px;
+      border: 1.5px solid rgba(255, 255, 255, .6);
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .scroll-mouse::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      translate: -50% 0;
+      width: 4px;
+      height: 8px;
+      border-radius: 3px;
+      background: var(--gold-light);
+      animation: dot 1.8s ease-in-out infinite;
+    }
+
+    @keyframes dot {
+      0% {
+        opacity: 1;
+        top: 6px;
+      }
+
+      70% {
+        opacity: 0;
+        top: 18px;
+      }
+
+      100% {
+        opacity: 0;
+        top: 6px;
+      }
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      position: relative;
+      z-index: 5;
+      margin-top: -48px;
+    }
+
+    .stats-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+    }
+
+    .stat {
+      padding: 30px 18px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat .num {
+      font-family: Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--pink);
+    }
+
+    .stat .label {
+      font-size: .74rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-top: 4px;
+    }
+
+    /* ---------- Reveal ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger>* {
+      transition-delay: calc(var(--i, 0) * 90ms);
+    }
+
+    /* ---------- About ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-media {
+      position: relative;
+    }
+
+    .about-media .frame-main {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-media .frame-main img {
+      height: 460px;
+      object-fit: cover;
+    }
+
+    .pink-tag {
+      position: absolute;
+      top: -22px;
+      left: -22px;
+      background: var(--pink);
+      color: #fff;
+      padding: 18px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+
+    .pink-tag .num {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .pink-tag .txt {
+      font-size: .65rem;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      opacity: .9;
+    }
+
+    .about-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .92rem;
+      color: var(--muted);
+    }
+
+    .about-list li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ---------- Services ---------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 30px 22px;
+      text-align: left;
+      box-shadow: var(--shadow-md);
+      transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(214, 51, 132, .06), transparent 60%);
+      opacity: 0;
+      transition: opacity .5s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-card:hover::after {
+      opacity: 1;
+    }
+
+    .service-card .ico {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .service-card h4 {
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .service-card p {
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    /* ---------- Gallery (masonry) ---------- */
+    .gallery-grid {
+      column-count: 4;
+      column-gap: 16px;
+    }
+
+    .gallery-grid figure {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      display: block;
+      transition: transform .7s var(--ease);
+    }
+
+    .gallery-grid figure::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(17, 17, 17, .7), transparent 55%);
+      opacity: 0;
+      transition: opacity .4s;
+    }
+
+    .gallery-grid figcaption {
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      color: #fff;
+      font-size: .82rem;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: .4s var(--ease);
+    }
+
+    .gallery-grid figure:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-grid figure:hover::before,
+    .gallery-grid figure:hover figcaption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 17, 17, .94);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: .4s var(--ease);
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox img {
+      max-width: 82vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      color: #fff;
+      font-size: 1.4rem;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .3s;
+    }
+
+    .lightbox-close:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* ---------- Why choose us ---------- */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .why-card {
+      background: linear-gradient(160deg, var(--pink-light), var(--surface));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 32px 26px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: .5s var(--ease);
+    }
+
+    .why-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .why-card .ico {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    [data-theme="dark"] .why-card .ico {
+      background: var(--surface);
+    }
+
+    .why-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .why-card p {
+      font-size: .88rem;
+      color: var(--muted);
+    }
+
+    /* ---------- CEO ---------- */
+    .ceo-section {
+      background: linear-gradient(160deg, var(--black), #2b1420);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ceo-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .ceo-photo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .ceo-photo {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid var(--gold);
+      box-shadow: 0 30px 70px -14px rgba(212, 175, 55, .4);
+    }
+
+    .ceo-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ceo-text .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .ceo-text .eyebrow::before {
+      background: var(--gold-light);
+    }
+
+    .ceo-text h2 {
+      color: #fff;
+      margin-top: 14px;
+    }
+
+    .ceo-text p {
+      color: rgba(255, 255, 255, .75);
+      margin-top: 16px;
+    }
+
+    .ceo-name {
+      margin-top: 22px;
+      font-family: Georgia, serif;
+      font-size: 1.3rem;
+      color: var(--gold-light);
+    }
+
+    .ceo-role {
+      font-size: .8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .55);
+      margin-top: 4px;
+    }
+
+    /* ---------- Testimonials ---------- */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 30px 26px;
+      box-shadow: var(--shadow-md);
+      transition: .5s var(--ease);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-card p.quote {
+      font-style: italic;
+      color: var(--muted);
+      font-size: .95rem;
+      margin-bottom: 18px;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reviewer .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .reviewer .name {
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    .reviewer .loc {
+      font-size: .76rem;
+      color: var(--muted);
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-list {
+      max-width: 800px;
+      margin-inline: auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: .98rem;
+      text-align: left;
+      color: var(--text);
+    }
+
+    .faq-icon {
+      font-size: 1.3rem;
+      color: var(--pink);
+      transition: transform .4s var(--ease);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .5s var(--ease);
+    }
+
+    .faq-answer p {
+      padding: 0 24px 20px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 50px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 20px;
+      align-content: start;
+    }
+
+    .info-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: var(--pink-light);
+      box-shadow: var(--shadow-md);
+    }
+
+    [data-theme="dark"] .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .info-card .ico {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info-card h4 {
+      font-size: .92rem;
+    }
+
+    .info-card p {
+      font-size: .86rem;
+      color: var(--muted);
+    }
+
+    .contact-form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full {
+      grid-column: 1/-1;
+    }
+
+    .form-group label {
+      font-size: .76rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+      font-size: .95rem;
+      transition: .3s;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--pink);
+    }
+
+    .field-error {
+      font-size: .74rem;
+      color: #c0392b;
+      min-height: 14px;
+    }
+
+    .form-actions {
+      margin-top: 24px;
+    }
+
+    /* ---------- Contact-method modal ---------- */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 17, 17, .6);
+      backdrop-filter: blur(4px);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: .4s var(--ease);
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-box {
+      background: rgba(255, 255, 255, .85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      transform: scale(.9) translateY(20px);
+      transition: .5s var(--ease);
+    }
+
+    [data-theme="dark"] .modal-box {
+      background: rgba(32, 20, 28, .9);
+      border-color: var(--border);
+    }
+
+    .modal-overlay.active .modal-box {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-box h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .modal-box p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 26px;
+    }
+
+    .modal-options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .modal-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: .92rem;
+      transition: .35s var(--ease);
+    }
+
+    .modal-btn.email {
+      background: var(--pink-light);
+      color: var(--pink-dark);
+    }
+
+    .modal-btn.email:hover {
+      background: var(--pink);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .modal-btn.whatsapp {
+      background: #e6f7ee;
+      color: #1e8a4c;
+    }
+
+    [data-theme="dark"] .modal-btn.whatsapp {
+      background: rgba(46, 158, 91, .15);
+    }
+
+    .modal-btn.whatsapp:hover {
+      background: #25D366;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .modal-btn.cancel {
+      background: transparent;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .modal-btn.cancel:hover {
+      color: var(--text);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--black);
+      color: rgba(255, 255, 255, .75);
+      padding-top: 70px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 44px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .footer-brand .brand-name {
+      color: #fff;
+    }
+
+    .footer-brand p {
+      margin-top: 14px;
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .55);
+      max-width: 300px;
+    }
+
+    footer h4 {
+      color: #fff;
+      font-size: .85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .6);
+      transition: .3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+      padding-left: 4px;
+    }
+
+    .footer-whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: .85rem;
+      margin-top: 8px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 24px 0;
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .45);
+      text-align: center;
+    }
+
+    .footer-bottom .credit {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    /* ---------- Back to top & floating WhatsApp ---------- */
+    #back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      z-index: 400;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(16px);
+      transition: .4s var(--ease);
+    }
+
+    #back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #back-to-top:hover {
+      background: var(--pink-dark);
+    }
+
+    #floating-whatsapp {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 14px 30px -8px rgba(37, 211, 102, .6);
+      z-index: 400;
+      animation: floatPulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes floatPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    /* ---------- Toasts ---------- */
+    #toast-container {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 5000;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .toast {
+      min-width: 270px;
+      max-width: 340px;
+      background: var(--surface);
+      border-radius: 14px;
+      box-shadow: var(--shadow-lg);
+      padding: 16px 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      border-left: 4px solid var(--pink);
+      transform: translateX(120%);
+      transition: transform .5s var(--ease);
+    }
+
+    .toast.show {
+      transform: translateX(0);
+    }
+
+    .toast .title {
+      font-weight: 700;
+      font-size: .9rem;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .toast .msg {
+      font-size: .84rem;
+      color: var(--muted);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1080px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery-grid {
+        column-count: 3;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+
+      .about-grid,
+      .ceo-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ceo-photo-wrap {
+        order: -1;
+      }
+
+      nav {
+        position: fixed;
+        inset: 0 0 0 auto;
+        width: min(320px, 82%);
+        height: 100vh;
+        background: var(--black);
+        display: flex;
+        align-items: center;
+        padding: 40px;
+        transform: translateX(100%);
+        transition: .55s var(--ease);
+        z-index: 55;
+      }
+
+      nav.active {
+        transform: translateX(0);
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      nav a {
+        color: #fff;
+        font-size: 1.05rem;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .stats-card {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 70px 0;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        column-count: 2;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form-card {
+        padding: 24px;
+      }
+
+      #floating-whatsapp {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+        bottom: 20px;
+        left: 20px;
+      }
+
+      #back-to-top {
+        width: 44px;
+        height: 44px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body data-theme="light">
+
+  <!-- ============ LOADER ============ -->
+  <div id="loader">
+    <div class="loader-mark">💎</div>
+    <div class="loader-text">Shereblinks</div>
+  </div>
+
+  <!-- ============ TOASTS ============ -->
+  <div id="toast-container"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header id="header">
+    <div class="container">
+      <a href="#home" class="brand">
+        <!-- Logo placeholder: replace this box with an <img> tag once you have a logo -->
+        <div class="logo-box" id="logo-placeholder">SB</div>
+        <div class="brand-name">Shereblinks<span>Custom Creations</span></div>
+      </a>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <button class="hamburger" id="hamburger"
+          aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Shereblinks · Sapele, Delta State</span>
+        <h1>Custom Creations Made <em>With Love</em> &amp; Creativity</h1>
+        <p class="sub">From personalized frames to corporate branding — Shereblinks turns everyday items into
+          meaningful, beautifully crafted keepsakes.</p>
+        <div class="hero-actions">
+          <a href="#gallery" class="btn btn-gold">View Our Work</a>
+          <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator"><span>Scroll</span>
+      <div class="scroll-mouse"></div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <div class="stats-bar container">
+    <div class="stats-card reveal">
+      <div class="stat">
+        <div class="num" data-count="150">0</div>
+        <div class="label">Happy Clients</div>
+      </div>
+      <div class="stat">
+        <div class="num" data-count="120">0</div>
+        <div class="label">Items Customized</div>
+      </div>
+      <div class="stat">
+        <div class="num" data-count="1">0</div>
+        <div class="label">Years Creating</div>
+      </div>
+      <div class="stat">
+        <div class="num" data-count="98">0</div>
+        <div class="label">% Satisfaction</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-media reveal">
+        <div class="pink-tag">
+          <div class="num">6+</div>
+          <div class="txt">Years of<br>Creativity</div>
+        </div>
+        <div class="frame-main">
+          <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=1000&q=80"
+            loading="lazy" alt="Shereblinks custom creations">
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">About Shereblinks</span>
+        <h2>Crafted With Passion, Personalised For You</h2>
+        <p style="color:var(--muted); margin-top:16px;">
+          Shereblinks specializes in transforming everyday items into personalized treasures. From customized
+          frames and bags to branded shirts, mugs and gift items, every piece we create carries meaning,
+          quality, and a touch of elegance — perfect for personal keepsakes, event gifts, or corporate branding.
+        </p>
+        <ul class="about-list">
+          <li>Customized Frames</li>
+          <li>Customized Bags</li>
+          <li>Customized Shirts</li>
+          <li>Personalized Mugs</li>
+          <li>Gift Items</li>
+          <li>Souvenirs</li>
+          <li>Branding</li>
+          <li>Event Gifts</li>
+          <li>Corporate Branding</li>
+          <li>Custom Designs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="line"></div><span></span>
+    <div class="line"></div>
+  </div>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section" id="services" style="background:var(--pink-light);">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">What We Offer</span>
+        <h2>Our Services</h2>
+        <p>Every creation is made with care, precision, and a personal touch.</p>
+      </div>
+      <div class="services-grid stagger">
+        <div class="service-card reveal" style="--i:0">
+          <div class="ico">🖼️</div>
+          <h4>Customized Frames</h4>
+          <p>Elegant frames personalized for every memory.</p>
+        </div>
+        <div class="service-card reveal" style="--i:1">
+          <div class="ico">👜</div>
+          <h4>Customized Bags</h4>
+          <p>Stylish bags branded to your taste.</p>
+        </div>
+        <div class="service-card reveal" style="--i:2">
+          <div class="ico">👕</div>
+          <h4>Customized Shirts</h4>
+          <p>Quality shirts printed with your designs.</p>
+        </div>
+        <div class="service-card reveal" style="--i:3">
+          <div class="ico">☕</div>
+          <h4>Personalized Mugs</h4>
+          <p>Mugs designed for gifting or keepsakes.</p>
+        </div>
+        <div class="service-card reveal" style="--i:4">
+          <div class="ico">🎁</div>
+          <h4>Gift Items</h4>
+          <p>Thoughtful gifts for every occasion.</p>
+        </div>
+        <div class="service-card reveal" style="--i:0">
+          <div class="ico">🏆</div>
+          <h4>Souvenirs</h4>
+          <p>Memorable souvenirs for events and milestones.</p>
+        </div>
+        <div class="service-card reveal" style="--i:1">
+          <div class="ico">✨</div>
+          <h4>Branding</h4>
+          <p>Distinct branding that tells your story.</p>
+        </div>
+        <div class="service-card reveal" style="--i:2">
+          <div class="ico">🎉</div>
+          <h4>Event Gifts</h4>
+          <p>Custom favors that guests remember.</p>
+        </div>
+        <div class="service-card reveal" style="--i:3">
+          <div class="ico">🏢</div>
+          <h4>Corporate Branding</h4>
+          <p>Professional branding for businesses.</p>
+        </div>
+        <div class="service-card reveal" style="--i:4">
+          <div class="ico">🎨</div>
+          <h4>Custom Designs</h4>
+          <p>Original designs tailored just for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Our Work</span>
+        <h2>Gallery</h2>
+        <p>A glimpse into the custom creations we've made for our clients.</p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <figure
+          data-full="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=1200&q=80"><img
+            src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=500&q=80"
+            loading="lazy" alt="Custom frame">
+          <figcaption>Custom Frame</figcaption>
+        </figure>
+        <figure data-full="https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?auto=format&fit=crop&w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?auto=format&fit=crop&w=500&q=80"
+            loading="lazy" alt="Custom bag">
+          <figcaption>Custom Bag</figcaption>
+        </figure>
+        <figure
+          data-full="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80"><img
+            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80"
+            loading="lazy" alt="Custom shirt">
+          <figcaption>Custom Shirt</figcaption>
+        </figure>
+        <figure
+          data-full="https://images.unsplash.com/photo-1577937927133-66ef06acdf18?auto=format&fit=crop&w=1200&q=80"><img
+            src="https://images.unsplash.com/photo-1577937927133-66ef06acdf18?auto=format&fit=crop&w=500&q=80"
+            loading="lazy" alt="Personalized mug">
+          <figcaption>Personalized Mug</figcaption>
+        </figure>
+        <figure data-full="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=500&q=80"
+            loading="lazy" alt="Gift items">
+          <figcaption>Gift Items</figcaption>
+        </figure>
+        <figure
+          data-full="https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1200&q=80"><img
+            src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=500&q=80"
+            loading="lazy" alt="Souvenirs">
+          <figcaption>Souvenirs</figcaption>
+        </figure>
+        <figure
+          data-full="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1200&q=80"><img
+            src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=500&q=80"
+            loading="lazy" alt="Event gift">
+          <figcaption>Event Gift</figcaption>
+        </figure>
+        <figure
+          data-full="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1200&q=80"><img
+            src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=500&q=80"
+            loading="lazy" alt="Corporate branding">
+          <figcaption>Corporate Branding</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+    <img src="" alt="Gallery preview" id="lightbox-img">
+  </div>
+
+  <!-- ============ WHY CHOOSE US ============ -->
+  <section class="section" id="why" style="background:var(--pink-light);">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>Why Clients Trust Shereblinks</h2>
+      </div>
+      <div class="why-grid stagger">
+        <div class="why-card reveal" style="--i:0">
+          <div class="ico">💎</div>
+          <h4>Quality Materials</h4>
+          <p>Only premium materials used in every creation.</p>
+        </div>
+        <div class="why-card reveal" style="--i:1">
+          <div class="ico">🚚</div>
+          <h4>Fast Delivery</h4>
+          <p>Timely delivery, wherever you are.</p>
+        </div>
+        <div class="why-card reveal" style="--i:2">
+          <div class="ico">💰</div>
+          <h4>Affordable Pricing</h4>
+          <p>Premium quality without the premium price tag.</p>
+        </div>
+        <div class="why-card reveal" style="--i:0">
+          <div class="ico">🎨</div>
+          <h4>Creative Designs</h4>
+          <p>Original, imaginative designs every time.</p>
+        </div>
+        <div class="why-card reveal" style="--i:1">
+          <div class="ico">😊</div>
+          <h4>Customer Satisfaction</h4>
+          <p>Your happiness is our top priority.</p>
+        </div>
+        <div class="why-card reveal" style="--i:2">
+          <div class="ico">🤝</div>
+          <h4>Trusted Brand</h4>
+          <p>Hundreds of satisfied clients and counting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CEO SECTION ============ -->
+  <section class="section ceo-section">
+    <div class="container ceo-grid">
+      <div class="ceo-photo-wrap reveal">
+        <div class="ceo-photo">
+          <!-- CEO image placeholder — replace src with the real photo -->
+          <img src="IMG-20260114-WA0149.jpg" loading="lazy" alt="Shereblinks CEO">
+        </div>
+      </div>
+      <div class="ceo-text reveal">
+        <span class="eyebrow">Meet Our Founder</span>
+        <h2>A Word From Our CEO</h2>
+        <p>
+          Welcome to Shereblinks! What started as a passion for creativity has grown into a brand trusted by
+          hundreds of clients across Delta State and beyond. Every custom piece we create is a reflection of
+          our commitment to quality, originality, and heartfelt craftsmanship. Thank you for trusting us to
+          turn your ideas into beautiful, lasting creations.
+        </p>
+        <div class="ceo-name"> Treasure Keke CEO</div>
+        <div class="ceo-role">Founder &amp; Creative Director</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Client Love</span>
+        <h2>What Our Customers Say</h2>
+      </div>
+      <div class="testimonial-grid stagger">
+        <div class="testimonial-card reveal" style="--i:0">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"The custom frame I ordered was even more beautiful than I imagined. Shereblinks truly pays
+            attention to detail."</p>
+          <div class="reviewer">
+            <div class="avatar">A</div>
+            <div>
+              <div class="name">Amaka O.</div>
+              <div class="loc">Sapele, Nigeria</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" style="--i:1">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Ordered branded mugs for my business launch — fast delivery, premium quality, and everyone
+            loved them!"</p>
+          <div class="reviewer">
+            <div class="avatar">D</div>
+            <div>
+              <div class="name">David K.</div>
+              <div class="loc">Warri, Nigeria</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" style="--i:2">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Shereblinks handled our corporate branding perfectly. Professional, creative, and
+            affordable."</p>
+          <div class="reviewer">
+            <div class="avatar">C</div>
+            <div>
+              <div class="name">Chidinma E.</div>
+              <div class="loc">Asaba, Nigeria</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="faq" style="background:var(--pink-light);">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Got Questions?</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list" id="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">How long does an order take to complete? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Most custom orders are completed within 2–5 business days, depending on the item and quantity.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you deliver outside Sapele? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes! We deliver across Delta State and can arrange shipping to other locations in Nigeria.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I send my own design? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Absolutely — send us your design via WhatsApp and we'll bring it to life on your chosen item.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you offer bulk/corporate orders? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, we handle bulk orders for events, businesses, and corporate branding at discounted rates.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How do I place an order? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Simply fill out the contact form below or message us directly on WhatsApp to get started.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Get In Touch</span>
+        <h2>Contact Shereblinks</h2>
+        <p>Have a custom idea in mind? Reach out and let's bring it to life.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="info-card">
+            <div class="ico">📍</div>
+            <div>
+              <h4>Location</h4>
+              <p>Ogodo Road, by Azigbo Lane, Sapele, Delta State, Nigeria</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ico">💬</div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>+234 705 542 6419</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ico">🎵</div>
+            <div>
+              <h4>TikTok</h4>
+              <p>@shereblinks</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ico">✉️</div>
+            <div>
+              <h4>Email Us</h4>
+              <p>Prefer email? Choose the email option after submitting the form.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card reveal">
+          <form id="contact-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group"><label for="c-name">Full Name</label><input type="text" id="c-name"
+                  placeholder="e.g. Jane Doe"><span class="field-error" data-error="c-name"></span></div>
+              <div class="form-group"><label for="c-email">Email Address</label><input type="email" id="c-email"
+                  placeholder="you@example.com"><span class="field-error" data-error="c-email"></span></div>
+              <div class="form-group"><label for="c-phone">Phone Number</label><input type="tel" id="c-phone"
+                  placeholder="+234 800 000 0000"><span class="field-error" data-error="c-phone"></span></div>
+              <div class="form-group"><label for="c-subject">Subject</label><input type="text" id="c-subject"
+                  placeholder="e.g. Custom Mug Order"></div>
+              <div class="form-group full"><label for="c-message">Message</label><textarea id="c-message"
+                  placeholder="Tell us what you'd like customized..."></textarea><span class="field-error"
+                  data-error="c-message"></span></div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-pink btn-block" id="contact-submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT METHOD MODAL ============ -->
+  <div class="modal-overlay" id="contact-modal">
+    <div class="modal-box">
+      <h3>How would you like to contact Shereblinks?</h3>
+      <p>Choose your preferred way to send your message.</p>
+      <div class="modal-options">
+        <button class="modal-btn email" id="modal-email">📧 Continue with Email</button>
+        <button class="modal-btn whatsapp" id="modal-whatsapp">💬 Continue with WhatsApp</button>
+        <button class="modal-btn cancel" id="modal-cancel">❌ Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="logo-box">SB</div>
+            <div class="brand-name">Shereblinks<span>Custom Creations</span></div>
+          </div>
+          <p>Custom creations made with love & creativity — frames, bags, shirts, mugs, gifts, and corporate branding,
+            crafted just for you.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.tiktok.com/@shereblinks" target="_blank" rel="noopener">TikTok: @shereblinks</a>
+            </li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Visit Us</h4>
+          <p style="font-size:.88rem; color:rgba(255,255,255,.55); margin-bottom:14px;">Ogodo Road, by Azigbo Lane,
+            Sapele, Delta State, Nigeria</p>
+          <a href="https://wa.me/2347055426419" target="_blank" rel="noopener" class="footer-whatsapp-btn">💬 Chat on
+            WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Shereblinks. All Rights Reserved.</span>
+        <span class="credit">Website Designed &amp; Developed by SHEREBOY TECH LTD®</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <a href="https://wa.me/2347055426419" target="_blank" rel="noopener" id="floating-whatsapp"
+    aria-label="Chat on WhatsApp">💬</a>
+
+  <script>
+    /* =========================================================
+       SHEREBLINKS — FRONT-END LOGIC (vanilla JS, no libraries)
+       ========================================================= */
+    (function () {
+      'use strict';
+
+      const WHATSAPP_NUMBER = '2347055426419';
+
+      /* ---------- Loader ---------- */
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => loader.classList.add('hide'), 500);
+      });
+
+      /* ---------- Sticky navbar ---------- */
+      const header = document.getElementById('header');
+      function onScrollHeader() {
+        if (window.scrollY > 60) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+      }
+      window.addEventListener('scroll', onScrollHeader);
+      onScrollHeader();
+
+      /* ---------- Mobile menu ---------- */
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('nav');
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+
+      /* ---------- Active nav highlight on scroll ---------- */
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href')));
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+        });
+      });
+
+      function updateActiveNav() {
+        let currentIndex = 0;
+        sections.forEach((sec, i) => {
+          if (sec && window.scrollY >= sec.offsetTop - 120) currentIndex = i;
+        });
+        navLinks.forEach(l => l.classList.remove('active'));
+        navLinks[currentIndex].classList.add('active');
+      }
+      window.addEventListener('scroll', updateActiveNav);
+      updateActiveNav();
+
+      /* ---------- Smooth scrolling with header offset ---------- */
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const id = a.getAttribute('href');
+          if (id.length > 1) {
+            const target = document.querySelector(id);
+            if (target) {
+              e.preventDefault();
+              const top = target.getBoundingClientRect().top + window.scrollY - 80;
+              window.scrollTo({ top, behavior: 'smooth' });
+            }
+          }
+        });
+      });
+
+      /* ---------- Dark / light mode toggle ---------- */
+      const themeToggle = document.getElementById('theme-toggle');
+      function applyTheme(theme) {
+        document.body.setAttribute('data-theme', theme);
+        themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        try { localStorage.setItem('shereblinks_theme', theme); } catch (e) { }
+      }
+      themeToggle.addEventListener('click', () => {
+        const current = document.body.getAttribute('data-theme');
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+      try {
+        const saved = localStorage.getItem('shereblinks_theme');
+        if (saved) applyTheme(saved);
+      } catch (e) { }
+
+      /* ---------- Scroll reveal animations ---------- */
+      const revealEls = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      revealEls.forEach(el => revealObserver.observe(el));
+
+      /* ---------- Animated counters ---------- */
+      const counters = document.querySelectorAll('.stat .num');
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseFloat(el.dataset.count);
+            const duration = 1600;
+            const start = performance.now();
+            function tick(now) {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const value = Math.floor(target * eased);
+              el.textContent = value.toLocaleString();
+              if (progress < 1) requestAnimationFrame(tick);
+              else el.textContent = target.toLocaleString();
+            }
+            requestAnimationFrame(tick);
+            counterObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(c => counterObserver.observe(c));
+
+      /* ---------- Gallery lightbox ---------- */
+      const galleryFigures = document.querySelectorAll('#gallery-grid figure');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      galleryFigures.forEach(fig => {
+        fig.addEventListener('click', () => {
+          lightboxImg.src = fig.dataset.full;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+      /* ---------- FAQ accordion ---------- */
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          document.querySelectorAll('.faq-item').forEach(i => {
+            i.classList.remove('active');
+            i.querySelector('.faq-answer').style.maxHeight = null;
+          });
+          if (!isActive) {
+            item.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+          }
+        });
+      });
+
+      /* ---------- Back to top ---------- */
+      const backToTop = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) backToTop.classList.add('show');
+        else backToTop.classList.remove('show');
+      });
+      backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      /* ---------- Toast notifications ---------- */
+      function showToast(title, message) {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `<div><span class="title">${title}</span><span class="msg">${message}</span></div>`;
+        container.appendChild(toast);
+        requestAnimationFrame(() => toast.classList.add('show'));
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => toast.remove(), 500);
+        }, 4200);
+      }
+
+      /* ---------- Contact form + contact-method modal ---------- */
+      const contactForm = document.getElementById('contact-form');
+      const contactModal = document.getElementById('contact-modal');
+      let pendingFormData = null;
+
+      function setError(id, message) {
+        const el = document.querySelector(`[data-error="${id}"]`);
+        if (el) el.textContent = message || '';
+      }
+      function isValidEmail(value) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value); }
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        ['c-name', 'c-email', 'c-phone', 'c-message'].forEach(id => setError(id, ''));
+
+        const data = {
+          name: document.getElementById('c-name').value.trim(),
+          email: document.getElementById('c-email').value.trim(),
+          phone: document.getElementById('c-phone').value.trim(),
+          subject: document.getElementById('c-subject').value.trim(),
+          message: document.getElementById('c-message').value.trim()
+        };
+
+        let valid = true;
+        if (!data.name) { setError('c-name', 'Please enter your name.'); valid = false; }
+        if (!data.email || !isValidEmail(data.email)) { setError('c-email', 'Enter a valid email address.'); valid = false; }
+        if (!data.phone) { setError('c-phone', 'Please enter your phone number.'); valid = false; }
+        if (!data.message) { setError('c-message', 'Please enter your message.'); valid = false; }
+        if (!valid) return;
+
+        // Do NOT send yet — store the data and open the contact-method modal
+        pendingFormData = data;
+        contactModal.classList.add('active');
+      });
+
+      document.getElementById('modal-cancel').addEventListener('click', () => {
+        contactModal.classList.remove('active');
+      });
+      contactModal.addEventListener('click', (e) => {
+        if (e.target === contactModal) contactModal.classList.remove('active');
+      });
+
+      document.getElementById('modal-whatsapp').addEventListener('click', () => {
+        if (!pendingFormData) return;
+        const d = pendingFormData;
+        const text =
+          `Hello Shereblinks! I'd like to make an inquiry.%0A%0A` +
+          `*Name:* ${encodeURIComponent(d.name)}%0A` +
+          `*Email:* ${encodeURIComponent(d.email)}%0A` +
+          `*Phone:* ${encodeURIComponent(d.phone)}%0A` +
+          (d.subject ? `*Subject:* ${encodeURIComponent(d.subject)}%0A` : '') +
+          `*Message:* ${encodeURIComponent(d.message)}`;
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+        contactModal.classList.remove('active');
+        showToast('Redirecting to WhatsApp', 'Your message details have been filled in for you.');
+        contactForm.reset();
+      });
+
+      document.getElementById('modal-email').addEventListener('click', () => {
+        if (!pendingFormData) return;
+        const d = pendingFormData;
+        const subject = encodeURIComponent('New Customer Inquiry');
+        const body = encodeURIComponent(
+          `Name: ${d.name}\nEmail: ${d.email}\nPhone: ${d.phone}\n${d.subject ? 'Subject: ' + d.subject + '\n' : ''}\nMessage:\n${d.message}`
+        );
+        window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        contactModal.classList.remove('active');
+        showToast('Opening Email App', 'Your default email app should now be opening.');
+        contactForm.reset();
+      });
+
+      /* ---------- Footer year ---------- */
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+    })();
+  </script>
+</body>
+
+</html>
